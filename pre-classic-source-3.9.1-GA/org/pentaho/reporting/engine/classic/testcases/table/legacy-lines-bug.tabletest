@@ -1,0 +1,60 @@
+<!--
+  ~ Copyright (c) 2007, Your Corporation. All Rights Reserved.
+  -->
+
+<!--
+  Testcase: Search for bugs in the border-creation.
+
+  In this case, the band, the rectangle and the element all define borders.
+
+  Contrary to the borders defined by rectangles, native borders never overlap. A border
+  shinks the content-area, so a element nested in a band with borders will never overlap
+  the border of the band.
+ -->
+<test-sequence page-width="500" xmlns="http://jfreereport.sourceforge.net/namespaces/testcases/tables">
+  <source>
+    <band id="band1" x="0" y="0" width="500" height="63">
+      <band id="textband" x="0" y="9">
+        <element id="some-element" width="500" x="0" y="0" height="14"/>
+      </band>
+      <band id="line-band">
+        <horizontal-line id="line-blue" x="0" y="56" width="500" height="0" color="blue"/>
+        <horizontal-line id="line-red" x="0" y="63" width="500" height="0" color="red"/>
+      </band>
+    </band>
+  </source>
+  
+  <result mode="simplified">
+    <row>
+      <empty-cell/>
+    </row>
+    <row>
+      <empty-cell/>
+    </row>
+    <row>
+      <cell rowspan="1" colspan="1"
+            content-idref="line-blue"
+            border-top-color="black" border-top-width="0" border-top-style="none"
+            border-left-color="black" border-left-width="0" border-left-style="none"
+            border-bottom-color="blue" border-bottom-width="1" border-bottom-style="solid"
+            border-right-color="black" border-right-width="0" border-right-style="none"
+            border-top-left-radius-width="0" border-top-left-radius-height="0"
+            border-top-right-radius-width="0" border-top-right-radius-height="0"
+            border-bottom-left-radius-width="0" border-bottom-left-radius-height="0"
+            border-bottom-right-radius-width="0" border-bottom-right-radius-height="0"/>
+    </row>
+    <row>
+      <cell rowspan="1" colspan="1"
+            content-idref="line-red"
+            border-top-color="black" border-top-width="0" border-top-style="none"
+            border-left-color="black" border-left-width="0" border-left-style="none"
+            border-bottom-color="red" border-bottom-width="1" border-bottom-style="solid"
+            border-right-color="black" border-right-width="0" border-right-style="none"
+            border-top-left-radius-width="0" border-top-left-radius-height="0"
+            border-top-right-radius-width="0" border-top-right-radius-height="0"
+            border-bottom-left-radius-width="0" border-bottom-left-radius-height="0"
+            border-bottom-right-radius-width="0" border-bottom-right-radius-height="0"/>
+    </row>
+  </result>
+</test-sequence>
+

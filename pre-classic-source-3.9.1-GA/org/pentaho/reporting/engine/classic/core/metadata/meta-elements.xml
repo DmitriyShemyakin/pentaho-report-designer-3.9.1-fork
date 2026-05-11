@@ -1,0 +1,953 @@
+<meta-data xmlns="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">
+
+  <element name="label" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.LabelType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="static-text-value"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="text-field" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.TextFieldType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="text-field-value"/>
+    <attribute-group-ref ref="wizard-aggregation"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="message" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.MessageType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="message-value"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+    
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="date-field" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.DateFieldType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="date-field-value"/>
+    <attribute-group-ref ref="wizard-aggregation"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="number-field" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.NumberFieldType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="number-field-value"/>
+    <attribute-group-ref ref="wizard-aggregation"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="resource-label" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ResourceLabelType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="resource-label"/>
+    <attribute-group-ref ref="translated-content"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="resource-field" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ResourceFieldType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="resource-field"/>
+    <attribute-group-ref ref="translated-content"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+    
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="resource-message" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ResourceMessageType"
+           content-type="java.lang.String">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="resource-message"/>
+    <attribute-group-ref ref="translated-content"/>
+    <attribute-group-ref ref="rich-text-attributes"/>
+    
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="content" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ContentType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="static-content-value"/>
+    <attribute-group-ref ref="replaced-content-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="content-field" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ContentFieldType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="field-value"/>
+    <attribute-group-ref ref="replaced-content-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="legacy-element" expert="true" hidden="true" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.LegacyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="rectangle" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.RectangleType"
+           content-type="java.awt.Shape">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="arc-width"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               value-type="java.lang.Number"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="arc-height"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               value-type="java.lang.Number"
+               value-role="Value"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="ellipse" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.EllipseType"
+           content-type="java.awt.Shape">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="horizontal-line" expert="false" hidden="false" preferred="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.HorizontalLineType"
+           content-type="java.awt.Shape">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="vertical-line" expert="false" hidden="false" preferred="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.VerticalLineType"
+           content-type="java.awt.Shape">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="replaced-content"/>
+  </element>
+
+  <element name="band" expert="false" hidden="false" preferred="true" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.BandType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="band-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+
+  <element name="external-element-field" expert="false" hidden="true" preferred="false" container="false"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.ExternalElementType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="field-value"/>
+    <attribute-group-ref ref="static-content-value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="target-type"
+               mandatory="false"
+               expert="true"
+               hidden="true"
+               value-type="java.lang.String"
+               value-role="Value"/>
+    
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="group-data-body" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.GroupDataBodyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+  
+
+  <element name="group-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.GroupFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-footer-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+  <element name="group-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.GroupHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-header-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+
+  <element name="details-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.DetailsHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-header-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+  <element name="details-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.DetailsFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-footer-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+  
+  <element name="crosstab-title-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabTitleHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+  <element name="crosstab-title-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabTitleFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+
+  <element name="crosstab-summary-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabSummaryHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+  <element name="crosstab-summary-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabSummaryFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="group-bands"/>
+  </element>
+
+  <element name="itemband" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.ItemBandType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="master-report" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.MasterReportType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="report-attributes"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="bundle"
+               mandatory="false"
+               expert="false"
+               hidden="true"
+               design-time-value="true"
+               computed="true"
+               value-type="org.pentaho.reporting.libraries.docbundle.DocumentBundle"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/html"
+               name="extra-raw-header-content"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               value-type="java.lang.String"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="page-definition"
+               mandatory="true"
+               expert="true"
+               hidden="true"
+               design-time-value="true"
+               computed="true"
+               value-type="org.pentaho.reporting.engine.classic.core.PageDefinition"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="preferred-output-type"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.String"
+               value-role="Value"
+               propertyEditor="org.pentaho.reporting.engine.classic.core.metadata.propertyeditors.ReportProcessTaskPropertyEditor"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="lock-preferred-output-type"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="auto-submit-parameter"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="auto-submit-default"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="show-parameter-ui"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="parameter-layout"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               value-type="java.lang.String"
+               value-role="Value"
+               propertyEditor="org.pentaho.reporting.engine.classic.core.metadata.propertyeditors.ParameterLayoutPropertyEditor"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho"
+               name="staging-mode"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               transient="false"
+               value-type="org.pentaho.reporting.engine.classic.core.util.StagingMode"
+               value-role="Value"
+               propertyEditor="org.pentaho.reporting.engine.classic.core.metadata.propertyeditors.StagingModePropertyEditor"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho"
+               name="report-cache"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               transient="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="data-cache"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               transient="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/pentaho"
+               name="visible"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="true"
+               transient="true"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/internal"
+               name="compatibility-level"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               transient="false"
+               propertyEditor="org.pentaho.reporting.engine.classic.core.metadata.propertyeditors.CompatibilityLevelPropertyEditor"
+               value-type="java.lang.Integer"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/excel"
+               name="freezing-top-position"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="false"
+               computed="false"
+               transient="false"
+               value-type="java.lang.Integer"
+               value-role="Value"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/excel"
+               name="freezing-left-position"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="false"
+               computed="false"
+               transient="false"
+               value-type="java.lang.Integer"
+               value-role="Value"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="relational-group" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.RelationalGroupType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="group-fields"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               design-time-value="true"
+               computed="true"
+               value-type="[Ljava.lang.String;"
+               value-role="Field"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="layout"/>
+  </element>
+
+  <element name="no-data-band" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.NoDataBandType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="page-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.PageFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-footer-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="page-bands"/>
+  </element>
+
+  <element name="page-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.PageHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="excel-header-attributes"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="page-bands"/>
+  </element>
+
+  <element name="report-footer" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.ReportFooterType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="report-header" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.ReportHeaderType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="sub-group-body" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.SubGroupBodyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="sub-report" expert="false" hidden="false" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.SubReportType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="report-attributes"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="subreport-active"
+               value-type="java.lang.Boolean"
+               value-role="value"
+               computed="true"
+               design-time-value="false"
+               expert="false"
+               hidden="false"
+               mandatory="false"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="data-cache"
+               mandatory="false"
+               expert="true"
+               hidden="false"
+               design-time-value="true"
+               computed="false"
+               transient="false"
+               value-type="java.lang.Boolean"
+               value-role="Value"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="watermark" expert="false" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.WatermarkType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="layout"/>
+    <style-group-ref ref="bands"/>
+    <style-group-ref ref="page-bands"/>
+  </element>
+
+  <element name="crosstab" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabGroupType">
+
+    <attribute-group-ref ref="root-level-band-attributes"/>
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="crosstab-other-group" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabOtherGroupType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="field"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               design-time-value="true"
+               computed="true"
+               value-type="java.lang.String"
+               value-role="Field"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="crosstab-other-group-body" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabOtherGroupBodyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+  </element>
+
+  <element name="crosstab-row-group" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabRowGroupType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="field"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               design-time-value="true"
+               computed="true"
+               value-type="java.lang.String"
+               value-role="Field"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="crosstab-row-group-body" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabRowGroupBodyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="crosstab-column-group" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabColumnGroupType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <attribute namespace="http://reporting.pentaho.org/namespaces/engine/attributes/core"
+               name="field"
+               mandatory="false"
+               expert="false"
+               hidden="false"
+               design-time-value="true"
+               computed="true"
+               value-type="java.lang.String"
+               value-role="Field"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+  <element name="crosstab-column-group-body" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.bands.CrosstabColumnGroupBodyType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="text"/>
+    <style-group-ref ref="bands"/>
+  </element>
+
+
+  <element name="auto-layout-box" expert="true" hidden="true" preferred="false" container="true"
+           bundle-name="org.pentaho.reporting.engine.classic.core.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.core.filter.types.AutoLayoutBoxType">
+  </element>
+
+
+
+</meta-data>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+  <name>broker-yoy.xaction</name>
+  <title>Broker Performance Year over Year</title>
+  <version>1</version>
+  <documentation> 
+    <author/>  
+    <description>Provides monthly comparisons for current and previous year for a given set of brokers</description>  
+    <icon>file.png|reporting.png</icon>  
+    <help/>  
+    <result-type>report</result-type> 
+  </documentation>
+
+  <inputs> 
+    <output-type type="string"> 
+      <default-value>pdf</default-value>  
+      <sources> 
+        <request>type</request> 
+      </sources> 
+    </output-type>  
+    <year1 type="string"> 
+      <sources> 
+        <request>year1</request> 
+      </sources>  
+      <default-value/> 
+    </year1>  
+    <year2 type="string"> 
+      <sources> 
+        <request>year2</request> 
+      </sources>  
+      <default-value/> 
+    </year2>  
+    <broker_list type="string-list"> 
+      <sources> 
+        <request>broker_list</request> 
+      </sources>  
+      <default-value/> 
+    </broker_list> 
+  </inputs>
+
+  <outputs> 
+    <report type="content"> 
+      <destinations> 
+        <response>content</response> 
+      </destinations> 
+    </report> 
+  </outputs>
+
+  <resources> 
+    <!-- use this section to identify any files that the component needs to execute the report -->  
+    <report-definition> 
+      <solution-file> 
+        <location>broker-yoy.xml</location>  
+        <mime-type>text/xml</mime-type> 
+      </solution-file> 
+    </report-definition> 
+  </resources>
+  
+  <actions> 
+    <action-definition> 
+      <component-name>SubActionComponent</component-name>
+      <action-type>Get Output Types</action-type>
+      <action-outputs> 
+        <output_type_list type="string-list"/> 
+      </action-outputs>
+      <component-definition> 
+        <solution><![CDATA[daily-race]]></solution>  
+        <path><![CDATA[data-list]]></path>  
+        <action><![CDATA[output-type.xaction]]></action> 
+      </component-definition> 
+    </action-definition>
+  
+    <action-definition> 
+      <component-name>SubActionComponent</component-name>
+      <action-type>Get Year List</action-type>
+      <action-outputs> 
+        <query_result type="result-set" mapping="year_list"/> 
+      </action-outputs>
+      <component-definition> 
+        <solution><![CDATA[daily-race]]></solution>  
+        <path><![CDATA[data-list]]></path>  
+        <action><![CDATA[year.xaction]]></action> 
+      </component-definition> 
+    </action-definition>
+  
+    <action-definition> 
+      <component-name>SubActionComponent</component-name>
+      <action-type>Get Brokers</action-type>
+      <action-outputs> 
+        <query_result type="result-set" mapping="broker_picklist"/> 
+      </action-outputs>
+      <component-definition> 
+        <solution><![CDATA[daily-race]]></solution>  
+        <path><![CDATA[data-list]]></path>  
+        <action><![CDATA[broker.xaction]]></action> 
+      </component-definition> 
+    </action-definition>
+  
+    <action-definition> 
+      <component-name>SecureFilterComponent</component-name>
+      <action-type>Prompts</action-type>
+      <action-inputs> 
+        <year1 type="string"/>  
+        <year_list type="result-set"/>  
+        <year2 type="string"/>  
+        <output-type type="string"/>  
+        <output_type_list type="string-list"/>  
+        <broker_list type="string-list"/>  
+        <broker_picklist type="result-set"/> 
+      </action-inputs>
+      <component-definition> 
+        <selections> 
+          <year1 prompt-if-one-value="true" style="select"> 
+            <title>Prior Year</title>  
+            <filter>year_list</filter> 
+          </year1>  
+          <year2 prompt-if-one-value="true" style="select"> 
+            <title>Current Year</title>  
+            <filter>year_list</filter> 
+          </year2>  
+          <broker_list style="list-multi" prompt-if-one-value="true"> 
+            <title>Brokers</title>  
+            <filter value-col-name="broker_code" display-col-name="broker_name">broker_picklist</filter> 
+          </broker_list>  
+          <output-type style="radio" prompt-if-one-value="true"> 
+            <title>Report Format</title>  
+            <filter>output_type_list</filter> 
+          </output-type> 
+        </selections> 
+      </component-definition> 
+    </action-definition>
+  
+    <action-definition> 
+      <component-name>SQLLookupRule</component-name>
+      <action-type>Get Data</action-type>
+      <action-inputs>
+        <year1 type="string"/>
+        <year2 type="string"/>
+        <broker_list type="string"/>
+      </action-inputs>
+      <action-outputs> 
+        <rule-result type="result-set"/> 
+      </action-outputs>
+      <component-definition> 
+        <jndi>BNLDW</jndi>  
+        <query><![CDATA[select 
+  b.full_name
+, d.month_abbr
+, sum(case d.year_num when {year1} then f.revenue else 0 end) as year1_rev
+, sum(case d.year_num when {year1} then f.pt else 0 end) as year1_pt
+, sum(case d.year_num when {year1} then f.gross_margin else 0 end) as year1_gm
+, sum(case d.year_num when {year2} then f.revenue else 0 end) as year2_rev
+, sum(case d.year_num when {year2} then f.pt else 0 end) as year2_pt
+, sum(case d.year_num when {year2} then f.gross_margin else 0 end) as year2_gm
+, sum(case d.year_num when {year2} then f.revenue else 0 end) - sum(case d.year_num when {year1} then f.revenue else 0 end) as var_rev
+, sum(case d.year_num when {year2} then f.pt else 0 end) - sum(case d.year_num when {year1} then f.pt else 0 end) as var_pt
+, sum(case d.year_num when {year2} then f.gross_margin else 0 end) - sum(case d.year_num when {year1} then f.gross_margin else 0 end) as var_gm
+from dw.fact_daily_gm f, dw.dim_date d, dw.dim_broker b
+where f.date_id = d.date_id
+and   f.broker_id = b.broker_id
+and   b.broker_code in ('{broker_list}')
+and   d.year_num in ({year1}, {year2})
+group by   b.full_name, d.month_abbr, d.month_num
+order by   b.full_name, d.month_num]]></query> 
+      </component-definition> 
+    </action-definition>
+  
+    <action-definition> 
+      <component-name>JFreeReportComponent</component-name>
+      <action-type>Run Report</action-type>
+      <action-inputs> 
+        <output-type type="string"/>  
+        <data type="result-set" mapping="rule-result"/>  
+        <year1 type="string"/>
+        <year2 type="string"/>
+      </action-inputs>
+      <action-resources> 
+        <report-definition type="resource"/> 
+      </action-resources>
+      <action-outputs> 
+        <report type="content"/> 
+      </action-outputs>
+      <component-definition/> 
+    </action-definition>
+ 
+  </actions> 
+</action-sequence>

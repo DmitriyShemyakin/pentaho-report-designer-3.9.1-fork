@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  ~ Copyright (c) 2007, Your Corporation. All Rights Reserved.
+  -->
+
+<report
+    xmlns="http://jfreereport.sourceforge.net/namespaces/reports/legacy/simple"
+    name="Bookstore Demo" pageformat="A4"
+    topmargin="70" leftmargin="70" bottommargin="70" rightmargin="70">
+  <groups>
+    <group name="Customer">
+      <groupheader name="GroupHeader" height="355" fontname="SansSerif" fontstyle="plain" fontsize="11" pagebreak-before-print="true">
+        <label name="Line1" x="0" y="12" width="200" height="12" alignment="left">Header</label>
+      </groupheader>
+      <groupfooter name="GroupFooter" height="200" fontname="SansSerif" fontstyle="plain" fontsize="11">
+        <!--        <rectangle x="0" y="0" width="100%" height="100%" color="#0000FF" draw="true" fill="false"/> -->
+        <label name="FooterLabel" x="200" y="20" width="200" height="12" alignment="left">Footer</label>
+      </groupfooter>
+      <fields>
+        <field>name</field>
+        <field>street</field>
+        <field>town</field>
+      </fields>
+    </group>
+  </groups>
+
+  <items height="12" name="ItemBand">
+    <string-field name="ItemBandField" x="0" y="0" width="50" height="12" alignment="left" fieldname="productcode"/>
+  </items>
+
+</report>

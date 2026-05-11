@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  ~ Copyright (c) 2007, Your Corporation. All Rights Reserved.
+  -->
+
+<report
+    xmlns="http://jfreereport.sourceforge.net/namespaces/reports/legacy/simple"
+    name="Linebreak Test" pageformat="A4"
+    topmargin="70" leftmargin="70" bottommargin="70" rightmargin="70">
+  
+  <items height="12" name="ItemBand">
+    <label name="ItemBandField" x="0" y="0" width="50" height="12" alignment="left">This test will be part of a paragraph.</label>
+  </items>
+
+</report>

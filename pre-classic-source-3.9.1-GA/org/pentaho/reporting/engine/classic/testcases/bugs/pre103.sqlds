@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2007, Your Corporation. All Rights Reserved.
+  -->
+
+<sql-datasource
+        xmlns="http://jfreereport.sourceforge.net/namespaces/datasources/sql"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+  <connection>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>jdbc:mysql://localhost:3306/sampledata</url>
+    <properties>
+      <property name="user">pentaho_user</property>
+      <property name="password">password</property>
+      <property name="holdResultsOpenOverStatementClose">true</property>
+    </properties>
+  </connection>
+
+  <query name="default">
+      SELECT
+     `CUSTOMERS`.`CUSTOMERNUMBER`,
+     `CUSTOMERS`.`CUSTOMERNAME`
+FROM
+     `CUSTOMERS`
+ORDER BY
+     `CUSTOMERS`.`CUSTOMERNUMBER` ASC
+  </query>
+
+  <query name="sub Orders">
+SELECT
+     `ORDERDETAILS`.`ORDERNUMBER`,
+     `ORDERS`.`ORDERDATE`,
+     `ORDERDETAILS`.`PRODUCTCODE`,
+     `PRODUCTS`.`PRODUCTNAME`,
+     (`ORDERDETAILS`.`QUANTITYORDERED`*`ORDERDETAILS`.`PRICEEACH`)AS TOTALPRICE
+FROM
+     `ORDERS` INNER JOIN `ORDERDETAILS` ON `ORDERS`.`ORDERNUMBER` = `ORDERDETAILS`.`ORDERNUMBER`
+     INNER JOIN `PRODUCTS` ON `ORDERDETAILS`.`PRODUCTCODE` = `PRODUCTS`.`PRODUCTCODE`
+WHERE
+     CUSTOMERNUMBER = ${CUSTOMERNUMBER}
+  </query>
+</sql-datasource>

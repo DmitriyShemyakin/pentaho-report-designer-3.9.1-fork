@@ -1,0 +1,14 @@
+<report
+    xmlns="http://jfreereport.sourceforge.net/namespaces/reports/legacy/simple"
+    name="Drawing demo" pageformat="A4"
+    topmargin="70" leftmargin="70" bottommargin="70" rightmargin="70">
+
+  <reportheader height="12" name="ItemBand">
+    <rectangle color="blue" fill="true" draw="false" width="100%" height="100%" x="0" y="0" weight="1"/>
+    <label name="ItemBandField" x="0" y="0" width="50" height="12" alignment="left">My text</label>
+  </reportheader>
+
+  <reportfooter>
+    <date-field fieldname="reportDate" x="50%" y="1" width="50%" height="12" fontsize="12" alignment="right"/>
+  </reportfooter>
+</report>

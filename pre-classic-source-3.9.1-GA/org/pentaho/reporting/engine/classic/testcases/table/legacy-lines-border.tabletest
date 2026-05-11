@@ -1,0 +1,71 @@
+<!--
+  ~ Copyright (c) 2007, Your Corporation. All Rights Reserved.
+  -->
+
+<!--
+  Testcase: Search for bugs in the border-creation.
+
+  In this case, the band, the rectangle and the element all define borders.
+
+  Contrary to the borders defined by rectangles, native borders never overlap. A border
+  shinks the content-area, so a element nested in a band with borders will never overlap
+  the border of the band.
+ -->
+<test-sequence page-width="500" xmlns="http://jfreereport.sourceforge.net/namespaces/testcases/tables">
+  <source>
+    <band id="band1" x="0" y="0" width="500" height="500">
+
+      <horizontal-line id="line1" x="100" y="100" width="300" height="0" color="green" />
+      <horizontal-line id="line2" x="100" y="400" width="300" height="0" color="green" />
+      <vertical-line id="line3" x="100" y="100" width="0" height="300" color="green" />
+      <vertical-line id="line4" x="400" y="100" width="0" height="300" color="green" />
+
+    </band>
+
+  </source>
+  <result mode="strict">
+    <row>
+      <empty-cell/>
+      <cell rowspan="1" colspan="1"
+            content-idref="line1"
+            border-top-color="black" border-top-width="0" border-top-style="none"
+            border-left-color="black" border-left-width="0" border-left-style="none"
+            border-bottom-color="green" border-bottom-width="1" border-bottom-style="solid"
+            border-right-color="black" border-right-width="0" border-right-style="none"
+            border-top-left-radius-width="0" border-top-left-radius-height="0"
+            border-top-right-radius-width="0" border-top-right-radius-height="0"
+            border-bottom-left-radius-width="0" border-bottom-left-radius-height="0"
+            border-bottom-right-radius-width="0" border-bottom-right-radius-height="0"/>
+      <empty-cell/>
+    </row>
+    <row>
+      <cell rowspan="1" colspan="1"
+            content-idref="line3"
+            border-top-color="black" border-top-width="0" border-top-style="none"
+            border-left-color="black" border-left-width="0" border-left-style="none"
+            border-bottom-color="black" border-bottom-width="0" border-bottom-style="none"
+            border-right-color="green" border-right-width="1" border-right-style="solid"
+            border-top-left-radius-width="0" border-top-left-radius-height="0"
+            border-top-right-radius-width="0" border-top-right-radius-height="0"
+            border-bottom-left-radius-width="0" border-bottom-left-radius-height="0"
+            border-bottom-right-radius-width="0" border-bottom-right-radius-height="0"/>
+      <cell rowspan="1" colspan="1"
+            content-idref="line4"
+            border-top-color="black" border-top-width="0" border-top-style="none"
+            border-left-color="black" border-left-width="0" border-left-style="none"
+            border-bottom-color="green" border-bottom-width="1" border-bottom-style="solid"
+            border-right-color="green" border-right-width="1" border-right-style="solid"
+            border-top-left-radius-width="0" border-top-left-radius-height="0"
+            border-top-right-radius-width="0" border-top-right-radius-height="0"
+            border-bottom-left-radius-width="0" border-bottom-left-radius-height="0"
+            border-bottom-right-radius-width="0" border-bottom-right-radius-height="0"/>
+      <empty-cell/>
+    </row>
+    <row>
+      <empty-cell/>
+      <empty-cell/>
+      <empty-cell/>
+    </row>
+  </result>
+</test-sequence>
+

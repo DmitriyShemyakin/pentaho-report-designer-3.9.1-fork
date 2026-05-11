@@ -1,0 +1,24 @@
+<!--
+  ~ Copyright (c) 2008, Your Corporation. All Rights Reserved.
+  -->
+
+<meta-data xmlns="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">
+
+  <include-globals src="res://org/jfree/report/metadata/global-meta-elements.xml"/>
+  <!--
+  <element name="bar-sparkline" expert="false" hidden="false" preferred="true"
+           bundle-name="org.jfree.report.metadata.messages"
+           implementation="org.pentaho.reporting.engine.classic.ext.charting.ChartElementType">
+
+    <attribute-group-ref ref="common-attributes"/>
+    <attribute-group-ref ref="interactivity"/>
+    <attribute-group-ref ref="field-value"/>
+    <attribute-group-ref ref="static-computed-value"/>
+
+    <style-group-ref ref="borders"/>
+    <style-group-ref ref="common"/>
+    <style-group-ref ref="replaced-content"/>
+    <style-group-ref ref="layout"/>
+  </element>
+-->
+</meta-data>

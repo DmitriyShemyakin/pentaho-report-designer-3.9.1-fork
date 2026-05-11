@@ -1,0 +1,21 @@
+<meta-data xmlns="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">
+
+  <data-factory name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.NamedStaticDataFactory"
+                bundle-name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.messages"
+                impl="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.StaticDataFactoryCore"/>
+
+  <data-factory name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.StaticDataFactory"
+                bundle-name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.messages"
+                editable="false" freeform-query="true" expert="true"
+                impl="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.StaticDataFactoryCore"/>
+
+  <data-factory name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.sql.SimpleSQLReportDataFactory"
+                bundle-name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.messages"
+                freeform-query="true" expert="true"
+                impl="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.sql.SQLDataFactoryCore"/>
+
+  <data-factory name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.sql.SQLReportDataFactory"
+                bundle-name="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.messages"
+                impl="org.pentaho.reporting.engine.classic.core.modules.misc.datafactory.sql.SQLDataFactoryCore"/>
+
+</meta-data>

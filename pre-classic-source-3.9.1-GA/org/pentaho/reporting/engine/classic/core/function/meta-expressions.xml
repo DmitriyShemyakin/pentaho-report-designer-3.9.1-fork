@@ -1,0 +1,1104 @@
+<meta-data xmlns="http://reporting.pentaho.org/namespaces/engine/classic/metadata/1.0">
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.GetDataRowValueExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.GetDataRowValueExpressionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.MetaDataStyleEvaluator"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.MetaDataStyleEvaluatorBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="true"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.SheetNameFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.SheetNameFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.IsExportTypeExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.IsExportTypeExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="exportType" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.SingleValueQueryFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.SingleValueQueryFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="queryTimeout" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="query" mandatory="false" preferred="false" value-role="Query" expert="false" hidden="false"/>
+    <property name="resultColumn" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.StyleExpressionsEvaluator"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.StyleExpressionsEvaluatorBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.WizardItemHideFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.WizardItemHideFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.CellFormatFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.CellFormatFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.sys.AttributeExpressionsEvaluator"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.sys.AttributeExpressionsEvaluatorBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="true" hidden="true"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.bool.IsEmptyDataExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.bool.IsEmptyDataExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.bool.OrExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.bool.OrExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.bool.AndExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.bool.AndExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.numeric.IsNegativeExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.numeric.IsNegativeExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.numeric.IsPositiveExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.numeric.IsPositiveExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.numeric.CompareNumberExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.numeric.CompareNumberExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="compareMethod" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="number" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.IsNullExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.IsNullExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.FormulaExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.FormulaExpressionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="formula" mandatory="false" preferred="false" value-role="Formula" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.CreateGroupAnchorsFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.CreateGroupAnchorsFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="anchorPrefix" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.ToUpperCaseStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.ToUpperCaseStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.TokenizeStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.TokenizeStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="delimeter" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="prefix" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="replacement" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="suffix" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.MapStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.MapStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="fallbackValue" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="ignoreCase" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="key" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="nullValue" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="text" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.ResourceMesssageFormatExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.ResourceMesssageFormatExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="formatKey" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="nullString" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="resourceIdentifier" mandatory="false" preferred="false" value-role="Bundle-Name" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.ResourceBundleLookupExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.ResourceBundleLookupExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="resourceIdentifier" mandatory="false" preferred="false" value-role="Bundle-Name" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.CapitalizeStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.CapitalizeStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="firstWordOnly" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.ToLowerCaseStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.ToLowerCaseStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.CompareStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.CompareStringExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="compareMethod" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="text" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.MessageFormatExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.MessageFormatExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="encoding" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="nullString" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="pattern" mandatory="false" preferred="false" value-role="Message" expert="false" hidden="false"/>
+    <property name="urlEncodeResult" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="urlEncodeValues" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.MapIndirectExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.MapIndirectExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="fallbackForward" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="forward" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="ignoreCase" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="key" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="nullValue" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.SubStringExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.SubStringExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="ellipsis" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="length" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="start" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.strings.URLEncodeExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.strings.URLEncodeExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="encoding" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemHideFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemHideFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="ignoreGroupBreaks" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="ignorePageBreaks" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TextFormatExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TextFormatExpressionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="encoding" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="pattern" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="urlEncodeResult" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="urlEncodeValues" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.EventMonitorFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.EventMonitorFunctionBundle"
+              result="java.lang.Object" expert="true" hidden="true" preferred="false">
+    <property name="deepTraversing" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TriggerPageFooterFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TriggerPageFooterFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalItemMaxFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalItemMaxFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PageTotalFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PageTotalFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="pageIncrement" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="startPage" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PageFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PageFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="pageIncrement" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="startPage" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.CreateHyperLinksFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.CreateHyperLinksFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="target" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="windowField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PaintDynamicComponentFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PaintDynamicComponentFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="true"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="true"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="true"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemSumFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemSumFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.date.DateSpanExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.date.DateSpanExpressionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="endDateField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="startDateField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.date.CompareDateExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.date.CompareDateExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="compareMethod" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="date" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.date.DateExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.date.DateExpressionBundle"
+              result="java.util.Date" expert="false" hidden="false" preferred="false">
+    <property name="day" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfMonth" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfWeek" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfWeekInMonth" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dayOfYear" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="epochTime" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="hour" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="milliSecond" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="minute" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="month" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="second" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="time" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="timeZone" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="weekOfYear" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="weekOfMonth" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="year" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.date.VariableDateExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.date.VariableDateExpressionBundle"
+              result="java.util.Date" expert="false" hidden="false" preferred="false">
+    <property name="day" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfMonth" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfMonthField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="dayOfWeek" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfWeekField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="dayOfWeekInMonth" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dayOfWeekInMonthField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="dayOfYear" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dayOfYearField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="epochTime" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="epochTimeField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="hour" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="hourField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="milliSecond" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="milliSecondField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="minute" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="minuteField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="month" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="monthField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="second" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="secondField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="time" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="timeField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="timeZone" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="timeZoneField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="weekOfMonth" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="weekOfMonthField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="weekOfYear" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="weekOfYearField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="year" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="yearField" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.HidePageBandForTableExportFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.HidePageBandForTableExportFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="disableRepeatingHeader" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="hidePageBands" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="exportDescriptor" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnSumExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnSumExpressionBundle"
+              result="java.lang.Number" expert="true" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.DateCutExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.DateCutExpressionBundle"
+              result="java.util.Date" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="factor" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ElementTrafficLightFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ElementTrafficLightFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="color" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="defaultColor" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="defineBackground" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="limit" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="useAbsoluteValue" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="useOppositeLogic" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ElementColorFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ElementColorFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="colorFalse" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="colorTrue" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemMinFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemMinFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemMaxFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemMaxFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnDifferenceExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnDifferenceExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.HideElementByNameFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.HideElementByNameFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PageOfPagesFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PageOfPagesFunctionBundle"
+              result="java.lang.String" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="format" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="pageIncrement" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="startPage" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.RowBandingFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.RowBandingFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="initialState" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="invisibleBackground" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="newPageState" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="numberOfElements" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="visibleBackground" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ConvertToNumberExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ConvertToNumberExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="format" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="locale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.HideNullValuesFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.HideNullValuesFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemPercentageFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemPercentageFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scaleToHundred" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemAvgFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemAvgFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumQuotientPercentFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumQuotientPercentFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="dividend" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="divisor" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumQuotientFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalGroupSumQuotientFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="dividend" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="divisor" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnAverageExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnAverageExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="onlyValidFields" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="returnInfinity" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PercentageExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PercentageExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="dividend" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="divisor" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="useDifference" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalItemMinFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalItemMinFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.FormulaFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.FormulaFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="formula" mandatory="false" preferred="false" value-role="Formula" expert="false" hidden="false"/>
+    <property name="initial" mandatory="false" preferred="false" value-role="Formula" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ConvertToDateExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ConvertToDateExpressionBundle"
+              result="java.util.Date" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="format" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="locale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="timeZone" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalItemCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalItemCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.AverageExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.AverageExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PageItemSumFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PageItemSumFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ElementVisibilityFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ElementVisibilityFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalGroupCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalGroupCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="parentGroup" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.GroupCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.GroupCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="parentGroup" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ShowElementIfDataAvailableExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ShowElementIfDataAvailableExpressionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ItemColumnQuotientExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ItemColumnQuotientExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="dividend" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="divisor" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="useDifference" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnDivisionExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnDivisionExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="roundingMode" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PageItemCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PageItemCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.IsEmptyExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.IsEmptyExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.HideElementIfDataAvailableExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.HideElementIfDataAvailableExpressionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ElementVisibilitySwitchFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ElementVisibilitySwitchFunctionBundle"
+              layout-processor-mode="global"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="initialState" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="newPageState" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="numberOfElements" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnMinimumExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnMinimumExpressionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+  
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ShowElementByNameFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ShowElementByNameFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true"
+              layout-processor-mode="element">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="values" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.CompareFieldsExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.CompareFieldsExpressionBundle"
+              result="java.lang.Boolean" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="compareMethod" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="otherField" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnMaximumExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnMaximumExpressionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="true" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.NegativeNumberPaintChangeFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.NegativeNumberPaintChangeFunctionBundle"
+              layout-processor-mode="element"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="negativeColor" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="positiveColor" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="zeroColor" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ColumnMultiplyExpression"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ColumnMultiplyExpressionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.PaintComponentFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.PaintComponentFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false" deprecated="true">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="element" mandatory="false" preferred="false" value-role="ElementName" expert="false"
+              hidden="false"/>
+    <property name="field" mandatory="false" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+    <property name="scale" mandatory="false" preferred="false" value-role="Value" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.CountDistinctFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.CountDistinctFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="true" preferred="true" value-role="Value" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalCalculationFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalCalculationFunctionBundle"
+              result="java.lang.Object" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="true" preferred="true" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.ConditionalItemSumFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.ConditionalItemSumFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false"
+              deprecated="true">
+    <property name="conditionField" mandatory="false" preferred="false" value-role="Field" expert="false"
+              hidden="false"/>
+    <property name="conditionValue" mandatory="false" preferred="false" value-role="Value" expert="false"
+              hidden="false"/>
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true"
+              hidden="false"/>
+    <property name="field" mandatory="true" preferred="false" value-role="Field" expert="false" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+  <expression class="org.pentaho.reporting.engine.classic.core.function.TotalPageItemCountFunction"
+              bundle-name="org.pentaho.reporting.engine.classic.core.function.TotalPageItemCountFunctionBundle"
+              result="java.lang.Number" expert="false" hidden="false" preferred="false">
+    <property name="dependencyLevel" mandatory="false" preferred="false" value-role="Value" expert="true" hidden="false"/>
+    <property name="group" mandatory="false" preferred="false" value-role="Group" expert="false" hidden="false"/>
+    <property name="name" mandatory="true" preferred="true" value-role="Name" expert="false" hidden="false"/>
+  </expression>
+
+</meta-data>

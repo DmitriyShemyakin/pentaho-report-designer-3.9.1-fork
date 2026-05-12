@@ -10,9 +10,9 @@
 - `src/assembly/` — дескриптор сборки архива и скрипты `report-designer.bat` / `report-designer.ps1`.
 - `tools/setup-prd-runtime.ps1` — загрузка и распаковка официального `prd-ce-3.9.1-GA.zip` в `runtime/` (не коммитится).
 - `tools/run-prd.ps1` — тот же запуск, что и `PRD.bat`, но из PowerShell.
-- **`PRD.vbs`** — запуск **без чёрного окна консоли** (`javaw` + скрытый старт). Двойной щелчок по этому файлу — самый чистый вариант.
+- **`PRD.vbs`** — запуск **без чёрного окна консоли** (`javaw` + скрытый старт).
 - **`PRD.bat`** — вызывает `PRD.vbs`; у `.bat` Windows на долю секунды может показать окно `cmd` при старте из проводника.
-- После `mvn package` — **портативный архив** `target/prd-ui-fork-3.9.1-fork-1-distribution.zip`: распаковать и запустить `report-designer.bat` или `report-designer.ps1` (рядом папки `lib/` и `patch/`). Один «fat» JAR из всех библиотек PRD не собираем — конфликты `META-INF` и подписей; ZIP — надёжный вариант для переноса.
+- После `mvn package` — **портативный архив** `target/prd-ui-fork-3.9.1-fork-1-distribution.zip`: распаковать и запустить `report-designer.bat` или `report-designer.ps1` (рядом папки `lib/` и `patch/`).
 
 ## Требования
 
@@ -21,7 +21,7 @@
 
 ## Быстрый старт
 
-**Запуск без PowerShell и без консоли:** дважды щёлкните **`PRD.vbs`** в папке проекта — откроется только Report Designer, без `cmd`. Ярлык лучше вести на **`PRD.vbs`**, а не на `.bat` (у `.bat` иногда мелькает чёрное окно на мгновение).
+**Запуск без PowerShell:** дважды щёлкните **`PRD.vbs`** в папке проекта — откроется только Report Designer.
 
 **Альтернатива:** **`PRD.bat`** — то же самое через `wscript`, но при двойном щелчке Windows может на миг показать окно командной строки.
 
@@ -43,6 +43,6 @@ mvn package
 ## Интерфейс
 
 <img width="1280" height="684" alt="image" src="https://github.com/user-attachments/assets/b94ae60e-00e5-40c0-bc7c-e896631e8ae6" />
-
+_________________________________
 <img width="1913" height="1024" alt="image" src="https://github.com/user-attachments/assets/6d058ff7-60ab-42ef-a90c-7065fca01ac6" />
 

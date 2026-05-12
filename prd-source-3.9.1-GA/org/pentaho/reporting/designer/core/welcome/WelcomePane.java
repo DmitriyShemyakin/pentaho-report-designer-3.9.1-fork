@@ -17,21 +17,20 @@
 
 package org.pentaho.reporting.designer.core.welcome;
 
-import java.awt.AlphaComposite;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.Insets;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
@@ -39,6 +38,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreeModel;
 
@@ -50,16 +51,16 @@ import org.pentaho.reporting.designer.core.settings.WorkspaceSettings;
 import org.pentaho.reporting.designer.core.util.HyperLink;
 import org.pentaho.reporting.designer.core.util.IconLoader;
 import org.pentaho.reporting.designer.core.widgets.HyperlinkHandler;
-import org.pentaho.reporting.libraries.base.util.WaitingImageObserver;
 
 public class WelcomePane extends JDialog
 {
+  private static final int WELCOME_WIDTH = 920;
+  private static final int WELCOME_HEIGHT = 540;
+
   private JCheckBox showOnStartupCheckbox;
   private ReportDesignerContext reportDesignerContext;
   private NewReportAction newReportAction;
   private CloseActionListener closeActionListener;
-  private Image backgroundImage;
-
 
   public WelcomePane(final JFrame frame, final ReportDesignerContext reportDesignerContext)
   {
@@ -95,19 +96,16 @@ public class WelcomePane extends JDialog
 
     showOnStartupCheckbox = new JCheckBox
         (Messages.getString("WelcomePane.showAtStartup"), WorkspaceSettings.getInstance().isShowLauncher());// NON-NLS
+    showOnStartupCheckbox.setOpaque(false);
     showOnStartupCheckbox.addActionListener(new TriggerShowWelcomePaneAction());
 
-    backgroundImage = Toolkit.getDefaultToolkit().createImage
-        (IconLoader.class.getResource("/org/pentaho/reporting/designer/core/icons/WelcomeBackground.png"));// NON-NLS
-
-    final WaitingImageObserver obs = new WaitingImageObserver(backgroundImage);
-    obs.waitImageLoaded();
-
-    setResizable(false);
+    setResizable(true);
+    setMinimumSize(new Dimension(780, 460));
 
     initGUI();
 
     pack();
+    setSize(Math.max(getWidth(), WELCOME_WIDTH), Math.max(getHeight(), WELCOME_HEIGHT));
   }
 
   protected ReportDesignerContext getReportDesignerContext()
@@ -117,45 +115,155 @@ public class WelcomePane extends JDialog
 
   private void initGUI()
   {
-    final JPanel buttonPane = createButtonsPane();
-    final JPanel sidePane = createSidePane();
+    final GradientWelcomePanel root = new GradientWelcomePanel();
+    root.setLayout(new BorderLayout());
+    root.setPreferredSize(new Dimension(WELCOME_WIDTH, WELCOME_HEIGHT));
 
-    final JPanel contentPane = new ImagePanel(backgroundImage, false, false);
-    contentPane.setLayout(new BorderLayout());
-    contentPane.add(sidePane, BorderLayout.CENTER);
-    contentPane.add(buttonPane, BorderLayout.WEST);
-    setContentPane(contentPane);
+    final JPanel shell = new JPanel(new BorderLayout(20, 0));
+    shell.setOpaque(false);
+    shell.setBorder(new EmptyBorder(20, 24, 20, 24));
+
+    shell.add(createHeroPane(), BorderLayout.WEST);
+    shell.add(createSidePane(), BorderLayout.CENTER);
+
+    root.add(shell, BorderLayout.CENTER);
+    setContentPane(root);
+  }
+
+  private JPanel createHeroPane()
+  {
+    final JPanel hero = new JPanel();
+    hero.setOpaque(false);
+    hero.setLayout(new BoxLayout(hero, BoxLayout.Y_AXIS));
+    hero.setPreferredSize(new Dimension(360, 0));
+    hero.setMaximumSize(new Dimension(420, Integer.MAX_VALUE));
+    hero.setAlignmentX(JPanel.LEFT_ALIGNMENT);
+
+    final JLabel title = new JLabel(Messages.getString("WelcomePane.title"));// NON-NLS
+    final Font base = UIManager.getFont("Label.font");//NON-NLS
+    if (base != null)
+    {
+      title.setFont(base.deriveFont(Font.BOLD, base.getSize2D() + 8f));
+    }
+    else
+    {
+      title.setFont(title.getFont().deriveFont(Font.BOLD, 22f));
+    }
+    title.setAlignmentX(JPanel.LEFT_ALIGNMENT);
+    hero.add(title);
+
+    hero.add(Box.createVerticalStrut(8));
+
+    final JLabel tagline = new JLabel(Messages.getString("WelcomePane.tagline"));// NON-NLS
+    Color muted = UIManager.getColor("Label.disabledForeground");//NON-NLS
+    if (muted == null)
+    {
+      muted = new Color(100, 100, 100);
+    }
+    tagline.setForeground(muted);
+    if (base != null)
+    {
+      tagline.setFont(base.deriveFont(base.getSize2D() + 1f));
+    }
+    tagline.setAlignmentX(JPanel.LEFT_ALIGNMENT);
+    hero.add(tagline);
+
+    hero.add(Box.createVerticalStrut(28));
+
+    final JPanel actions = new JPanel(new FlowLayout(FlowLayout.LEFT, 16, 0));
+    actions.setOpaque(false);
+    actions.setAlignmentX(JPanel.LEFT_ALIGNMENT);
+
+    try
+    {
+      final Class<?> wizardClass = Class.forName("org.pentaho.reporting.designer.extensions.wizard.NewWizardReportAction");
+      final AbstractDesignerContextAction newWizardActionListener =
+          (AbstractDesignerContextAction) wizardClass.getDeclaredConstructor().newInstance();
+      newWizardActionListener.setReportDesignerContext(reportDesignerContext);
+
+      final Object nameVal = newWizardActionListener.getValue("WIZARD.BUTTON.TEXT");//NON-NLS
+      final String wizardText = nameVal != null ? nameVal.toString() : Messages.getString("WelcomePane.title");
+
+      final JButton wizardBtn = createActionButton(wizardText, IconLoader.getInstance().getWizardDocumentIcon());
+      wizardBtn.addActionListener(newWizardActionListener);
+      wizardBtn.addActionListener(closeActionListener);
+      actions.add(wizardBtn);
+    }
+    catch (Exception e)
+    {
+      // wizard extension not installed
+    }
+
+    final JButton newReportBtn = createActionButton(
+        stripHtml(Messages.getString("WelcomePane.newReportLabel")),// NON-NLS
+        IconLoader.getInstance().getCreateReportIcon());
+    newReportBtn.addActionListener(newReportAction);
+    newReportBtn.addActionListener(closeActionListener);
+    actions.add(newReportBtn);
+
+    hero.add(actions);
+    hero.add(Box.createVerticalGlue());
+
+    return hero;
+  }
+
+  private static String stripHtml(final String html)
+  {
+    if (html == null)
+    {
+      return "";
+    }
+    return html.replaceAll("<[^>]+>", " ").replace("&nbsp;", " ").trim().replaceAll("\\s+", " ");//NON-NLS
+  }
+
+  private JButton createActionButton(final String text, final javax.swing.Icon icon)
+  {
+    final JButton b = new JButton(text, icon);
+    b.setVerticalTextPosition(SwingConstants.BOTTOM);
+    b.setHorizontalTextPosition(SwingConstants.CENTER);
+    b.setFocusPainted(false);
+    b.setMargin(new Insets(12, 16, 12, 16));
+    return b;
   }
 
   private JPanel createSidePane()
   {
-    final int buttonPaneWidth = backgroundImage.getWidth(null);
-    final int buttonPaneHeight = backgroundImage.getHeight(null);
-
     final TreeModel sampleTreeModel = SamplesTreeBuilder.getSampleTreeModel();
     final FilesTree tree = new FilesTree(sampleTreeModel, reportDesignerContext, this);
     final JScrollPane scrollPane = new JScrollPane(tree);
     scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    scrollPane.getViewport().setBackground(Color.white);
-    scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
+    final Color tableBg = UIManager.getColor("Table.background");//NON-NLS
+    scrollPane.getViewport().setBackground(tableBg != null ? tableBg : Color.WHITE);
+
+    Color border = UIManager.getColor("Component.borderColor");//NON-NLS
+    if (border == null)
+    {
+      border = new Color(0xD0D0D0);
+    }
+    scrollPane.setBorder(BorderFactory.createCompoundBorder(
+        BorderFactory.createLineBorder(border, 1),
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
 
     final JPanel sidePane = new JPanel();
     sidePane.setOpaque(false);
-    sidePane.setBackground(new Color(0,0,0,0));
-    sidePane.setBorder(new EmptyBorder(0,0,0,0));
     sidePane.setLayout(new GridBagLayout());
-    sidePane.setBorder(new EmptyBorder(5, 5, 5, 5));
-    sidePane.setMinimumSize(new Dimension(buttonPaneWidth - 514, buttonPaneHeight));
-    sidePane.setPreferredSize(new Dimension(buttonPaneWidth - 514, buttonPaneHeight));
-    sidePane.setMaximumSize(new Dimension(buttonPaneWidth - 514, buttonPaneHeight));
+
+    final JLabel samplesLabel = new JLabel(Messages.getString("WelcomePane.samples"));// NON-NLS
+    final Font base = UIManager.getFont("Label.font");//NON-NLS
+    if (base != null)
+    {
+      samplesLabel.setFont(base.deriveFont(Font.BOLD, base.getSize2D() + 1f));
+    }
 
     GridBagConstraints gbc = new GridBagConstraints();
     gbc.gridx = 0;
     gbc.gridy = 0;
     gbc.weightx = 1;
-    gbc.fill = GridBagConstraints.HORIZONTAL;
-    sidePane.add(new JLabel(Messages.getString("WelcomePane.samples")), gbc);  // Add the Label
+    gbc.anchor = GridBagConstraints.WEST;
+    gbc.insets = new Insets(0, 0, 8, 0);
+    sidePane.add(samplesLabel, gbc);
 
     gbc = new GridBagConstraints();
     gbc.gridx = 0;
@@ -163,21 +271,24 @@ public class WelcomePane extends JDialog
     gbc.weightx = 1;
     gbc.weighty = 1;
     gbc.fill = GridBagConstraints.BOTH;
+    gbc.insets = new Insets(0, 0, 0, 0);
     sidePane.add(scrollPane, gbc);
 
-    // Add the resources panel
-    final JPanel onlineResourcesList = new JPanel(new GridLayout(4, 1));
+    final JPanel onlineResourcesList = new JPanel(new GridLayout(0, 1, 0, 4));
     onlineResourcesList.setOpaque(false);
-    onlineResourcesList.setBackground(new Color(0,0,0,0));
-    onlineResourcesList.setBorder(new EmptyBorder(0,0,0,0));
-    onlineResourcesList.add(new JLabel(Messages.getString("WelcomePane.resources")));
-    onlineResourcesList.add(createLink(Messages.getString("WelcomePane.forums"), Messages.getString("WelcomePane.url.forums")));
+    final JLabel res = new JLabel(Messages.getString("WelcomePane.resources"));// NON-NLS
+    if (base != null)
+    {
+      res.setFont(base.deriveFont(Font.BOLD, base.getSize2D() + 1f));
+    }
+    onlineResourcesList.add(res);
+    onlineResourcesList.add(createLink(Messages.getString("WelcomePane.forums"), Messages.getString("WelcomePane.url.forums")));// NON-NLS
 
     gbc = new GridBagConstraints();
     gbc.gridx = 0;
     gbc.gridy = 2;
     gbc.weightx = 1;
-    gbc.insets = new Insets(20, 0, 20, 0);
+    gbc.insets = new Insets(20, 0, 16, 0);
     gbc.fill = GridBagConstraints.HORIZONTAL;
     sidePane.add(onlineResourcesList, gbc);
 
@@ -189,69 +300,6 @@ public class WelcomePane extends JDialog
     sidePane.add(showOnStartupCheckbox, gbc);
 
     return sidePane;
-  }
-
-  private JPanel createButtonsPane()
-  {
-    final int buttonPaneHeight = backgroundImage.getHeight(null);
-    final JPanel buttonPane = new JPanel();
-    buttonPane.setLayout(null);
-    buttonPane.setOpaque(false);
-    buttonPane.setBackground(new Color(0,0,0,0));
-    buttonPane.setBorder(new EmptyBorder(0,0,0,0));
-    buttonPane.setMinimumSize(new Dimension(514, buttonPaneHeight));
-    buttonPane.setMaximumSize(new Dimension(514, buttonPaneHeight));
-    buttonPane.setPreferredSize(new Dimension(514, buttonPaneHeight));
-
-    try
-    {
-      final Class wizardClass = Class.forName("org.pentaho.reporting.designer.extensions.wizard.NewWizardReportAction");
-      final AbstractDesignerContextAction newWizardActionListener =
-          (AbstractDesignerContextAction) wizardClass.newInstance();
-      newWizardActionListener.setReportDesignerContext(reportDesignerContext);
-      final JButton wizardBtn = new TransparentButton();
-      wizardBtn.addActionListener(newWizardActionListener);
-      wizardBtn.addActionListener(closeActionListener);
-      wizardBtn.setBorderPainted(true);
-      wizardBtn.setBounds(120, 147, 90, 118);
-      buttonPane.add(wizardBtn);
-
-      final JLabel wizardLabel =
-          new JLabel(newWizardActionListener.getValue("WIZARD.BUTTON.TEXT").toString(), JLabel.CENTER);//NON-NLS
-      wizardLabel.setBounds(80, 273, 165, 56);
-      buttonPane.add(wizardLabel);
-
-      final JButton wizardLabelBtn = new TransparentButton();
-      wizardLabelBtn.addActionListener(newWizardActionListener);
-      wizardLabelBtn.addActionListener(closeActionListener);
-      wizardLabelBtn.setBorderPainted(true);
-      wizardLabelBtn.setBounds(80, 273, 165, 56);
-      buttonPane.add(wizardLabelBtn);
-    }
-    catch (Exception e)
-    {
-      // todo: Remove me. Replace the code with a real extension mechanism
-    }
-
-    // Adds the new (blank) report button
-    final JButton newReportBtn = new TransparentButton();
-    newReportBtn.addActionListener(newReportAction);
-    newReportBtn.addActionListener(closeActionListener);
-    newReportBtn.setBorderPainted(true);
-    newReportBtn.setBounds(323, 147, 90, 118);
-    buttonPane.add(newReportBtn);
-
-    final JLabel newReportLabel = new JLabel(Messages.getString("WelcomePane.newReportLabel"), JLabel.CENTER);
-    newReportLabel.setBounds(285, 273, 165, 56);
-    buttonPane.add(newReportLabel);
-
-    final JButton newReportLabelBtn = new TransparentButton();
-    newReportLabelBtn.addActionListener(newReportAction);
-    newReportLabelBtn.addActionListener(closeActionListener);
-    newReportLabelBtn.setBorderPainted(true);
-    newReportLabelBtn.setBounds(285, 273, 165, 56);
-    buttonPane.add(newReportLabelBtn);
-    return buttonPane;
   }
 
   /**
@@ -268,7 +316,6 @@ public class WelcomePane extends JDialog
     return linkLbl;
   }
 
-
   private class TriggerShowWelcomePaneAction implements ActionListener
   {
     private TriggerShowWelcomePaneAction()
@@ -280,7 +327,6 @@ public class WelcomePane extends JDialog
       WorkspaceSettings.getInstance().setShowLauncher(showOnStartupCheckbox.isSelected());
     }
   }
-
 
   /**
    * @author wseyler
@@ -296,29 +342,5 @@ public class WelcomePane extends JDialog
       dispose();
     }
 
-  }
-
-  private class TransparentButton extends JButton
-  {
-    public TransparentButton()
-    {
-      this(null);
-    }
-
-    public TransparentButton(final String text)
-    {
-      super(text);
-      setOpaque(false);
-      setBackground(new Color(0,0,0,0));
-      setBorder(new EmptyBorder(0,0,0,0));
-    }
-
-    public void paint(final Graphics g)
-    {
-      final Graphics2D g2 = (Graphics2D) g.create();
-      g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.05f));
-      super.paint(g2);
-      g2.dispose();
-    }
   }
 }

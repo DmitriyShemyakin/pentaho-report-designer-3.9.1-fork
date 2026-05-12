@@ -17,6 +17,10 @@
 
 package org.pentaho.reporting.designer.core.util;
 
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+
 import javax.swing.ImageIcon;
 
 public class CanvasImageLoader
@@ -24,7 +28,10 @@ public class CanvasImageLoader
 
   private static final CanvasImageLoader instance = new CanvasImageLoader();
 
-  private ImageIcon backgroundImage;
+  private static final int CANVAS_BG_PIXEL_WIDTH = 2400;
+  private static final int CANVAS_BG_PIXEL_HEIGHT = 1800;
+
+  private volatile ImageIcon backgroundImage;
   private ImageIcon leftShadowImage;
   private ImageIcon rightShadowImage;
   private ImageIcon bottomShadowImage;
@@ -38,8 +45,6 @@ public class CanvasImageLoader
 
   private CanvasImageLoader()
   {
-    backgroundImage = new ImageIcon(CanvasImageLoader.class.getResource
-        ("/org/pentaho/reporting/designer/core/icons/canvas_background.jpg")); // NON-NLS
     leftShadowImage = new ImageIcon(CanvasImageLoader.class.getResource
         ("/org/pentaho/reporting/designer/core/icons/left_shadow.png")); // NON-NLS
     rightShadowImage = new ImageIcon(CanvasImageLoader.class.getResource
@@ -79,7 +84,26 @@ public class CanvasImageLoader
 
   public ImageIcon getBackgroundImage()
   {
-    return backgroundImage;
+    ImageIcon cached = backgroundImage;
+    if (cached == null)
+    {
+      synchronized (CanvasImageLoader.class)
+      {
+        cached = backgroundImage;
+        if (cached == null)
+        {
+          final BufferedImage img = new BufferedImage(
+              CANVAS_BG_PIXEL_WIDTH, CANVAS_BG_PIXEL_HEIGHT, BufferedImage.TYPE_INT_RGB);
+          final Graphics2D g2 = img.createGraphics();
+          g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+          ModernSurfaceFill.paintCanvasWorkspace(g2, img.getWidth(), img.getHeight());
+          g2.dispose();
+          cached = new ImageIcon(img);
+          backgroundImage = cached;
+        }
+      }
+    }
+    return cached;
   }
 
 }

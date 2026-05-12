@@ -25,6 +25,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
@@ -43,6 +44,7 @@ import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.pentaho.reporting.designer.core.UiThemeUtilities;
 import org.pentaho.reporting.designer.core.settings.DateFormatModel;
 import org.pentaho.reporting.designer.core.settings.NumberFormatModel;
 import org.pentaho.reporting.designer.core.settings.SettingsMessages;
@@ -71,37 +73,60 @@ public class GeneralSettingsPanel extends JPanel implements SettingsPlugin
   {
 
     private LookAndFeelInfo lnfs[];
+    private String[] extraDisplayNames;
+    private String[] extraClassNames;
     private int selectedIndex;
 
     public LookAndFeelModel()
     {
       lnfs = UIManager.getInstalledLookAndFeels();
       selectedIndex = -1;
+
+      final ArrayList<String> d = new ArrayList<String>();
+      final ArrayList<String> c = new ArrayList<String>();
+      if (UiThemeUtilities.isFlatLafLightAvailable())
+      {
+        d.add(UiThemeUtilities.FLAT_LIGHT_DISPLAY_NAME);
+        c.add(UiThemeUtilities.FLAT_LIGHT_CLASS);
+      }
+      if (UiThemeUtilities.isFlatLafDarkAvailable())
+      {
+        d.add(UiThemeUtilities.FLAT_DARK_DISPLAY_NAME);
+        c.add(UiThemeUtilities.FLAT_DARK_CLASS);
+      }
+      extraDisplayNames = d.toArray(new String[d.size()]);
+      extraClassNames = c.toArray(new String[c.size()]);
     }
 
     public int getSize()
     {
-      return lnfs.length;
+      return lnfs.length + extraDisplayNames.length;
     }
 
     public Object getElementAt(final int index)
     {
-      // display value
-      return lnfs[index].getName();
+      if (index < lnfs.length)
+      {
+        return lnfs[index].getName();
+      }
+      return extraDisplayNames[index - lnfs.length];
     }
 
     public Object getSelectedItem()
     {
-      if (selectedIndex >= 0)
+      if (selectedIndex >= 0 && selectedIndex < lnfs.length)
       {
         return lnfs[selectedIndex].getName();
+      }
+      if (selectedIndex >= lnfs.length && selectedIndex < lnfs.length + extraDisplayNames.length)
+      {
+        return extraDisplayNames[selectedIndex - lnfs.length];
       }
       return null;
     }
 
     public void setSelectedItem(final Object anObject)
     {
-      // based on classname (or if that fails, try based on LNF name)
       for (int i = 0; anObject != null && i < lnfs.length; i++)
       {
         final LookAndFeelInfo lnf = lnfs[i];
@@ -117,6 +142,15 @@ public class GeneralSettingsPanel extends JPanel implements SettingsPlugin
         if (lnf.getName().equalsIgnoreCase(anObject.toString()))
         {
           selectedIndex = i;
+          return;
+        }
+      }
+      for (int i = 0; anObject != null && i < extraDisplayNames.length; i++)
+      {
+        if (extraDisplayNames[i].equalsIgnoreCase(anObject.toString())
+            || extraClassNames[i].equalsIgnoreCase(anObject.toString()))
+        {
+          selectedIndex = lnfs.length + i;
           return;
         }
       }

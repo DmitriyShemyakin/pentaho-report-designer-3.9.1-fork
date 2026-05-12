@@ -30,9 +30,7 @@ import java.beans.PropertyEditorManager;
 import java.io.File;
 import java.net.ProxySelector;
 import javax.swing.SwingUtilities;
-import javax.swing.UIDefaults;
 import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.text.StyleContext;
 
 import org.pentaho.reporting.designer.core.editor.expressions.ExpressionsTreeModel;
@@ -339,17 +337,13 @@ public class ReportDesigner
     try
     {
       final String lnfName = WorkspaceSettings.getInstance().getLNF();
-      if (!StringUtils.isEmpty(lnfName))
+      if (StringUtils.isEmpty(lnfName))
       {
-        final LookAndFeelInfo[] lnfs = UIManager.getInstalledLookAndFeels();
-        for (final LookAndFeelInfo lnf : lnfs)
-        {
-          if (lnf.getName().equals(lnfName))
-          {
-            UIManager.setLookAndFeel(lnf.getClassName());
-            break;
-          }
-        }
+        UiThemeUtilities.installDefaultLookAndFeel();
+      }
+      else
+      {
+        UiThemeUtilities.installLookAndFeelFromWorkspaceSetting(lnfName);
       }
     }
     catch (Throwable t)
@@ -357,8 +351,7 @@ public class ReportDesigner
       UncaughtExceptionsModel.getInstance().addException(t);
     }
 
-    final UIDefaults uiDefaults = UIManager.getDefaults();
-    uiDefaults.put("Table.gridColor", uiDefaults.get("Panel.background"));// NON-NLS
+    UiThemeUtilities.tweakGlobalUiDefaults();
   }
 
   public static void preloadFonts()

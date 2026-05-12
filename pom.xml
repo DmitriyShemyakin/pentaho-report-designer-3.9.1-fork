@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>local</groupId>
+  <artifactId>prd-ui-fork</artifactId>
+  <version>3.9.1-fork-1</version>
+  <packaging>jar</packaging>
+  <name>PRD UI fork overlay</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.skip>true</maven.compiler.skip>
+    <prd.root>${project.basedir}/runtime/prd-ce-3.9.1-GA</prd.root>
+    <prd.lib>${prd.root}/lib</prd.lib>
+    <flatlaf.version>3.4.1</flatlaf.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf</artifactId>
+      <version>${flatlaf.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>check-jar-count</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <mkdir dir="${project.build.directory}"/>
+                <available file="${prd.lib}" type="dir" property="prd.lib.dir.exists"/>
+                <fail unless="prd.lib.dir.exists"
+                       message="Missing directory ${prd.lib}. Run: powershell -File tools/setup-prd-runtime.ps1"/>
+                <resourcecount property="prd.jar.count">
+                  <fileset dir="${prd.lib}" includes="*.jar"/>
+                </resourcecount>
+                <fail message="Expected many jars under ${prd.lib} (got ${prd.jar.count}). Re-run tools/setup-prd-runtime.ps1.">
+                  <condition>
+                    <resourcecount when="less" count="20">
+                      <fileset dir="${prd.lib}" includes="*.jar"/>
+                    </resourcecount>
+                  </condition>
+                </fail>
+                <echo message="PRD runtime lib OK (${prd.jar.count} jars)."/>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-ui-fork</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <mkdir dir="${project.build.outputDirectory}"/>
+                <path id="prd.cp">
+                  <fileset dir="${prd.lib}" includes="*.jar"/>
+                </path>
+                <pathconvert property="prd.cp.str" refid="prd.cp" pathsep="${path.separator}"/>
+                <javac srcdir="${project.basedir}" destdir="${project.build.outputDirectory}"
+                       classpath="${prd.cp.str}" includeantruntime="false" encoding="UTF-8"
+                       source="1.8" target="1.8" debug="true" failonerror="true">
+                  <compilerarg value="-Xlint:-options"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/ReportDesigner.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/UiThemeUtilities.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/settings/ui/GeneralSettingsPanel.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/welcome/WelcomePane.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/welcome/GradientWelcomePanel.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/util/ModernSurfaceFill.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/util/CanvasImageLoader.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/splash/SplashScreen.java"/>
+                  <include name="prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/ReportDesignerFrame.java"/>
+                </javac>
+                <copy todir="${project.build.outputDirectory}/org/pentaho/reporting/designer/core/messages"
+                      file="${project.basedir}/prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/messages/messages.properties"/>
+                <copy todir="${project.build.outputDirectory}/org/pentaho/reporting/designer/core/messages"
+                      file="${project.basedir}/prd-source-3.9.1-GA/org/pentaho/reporting/designer/core/messages/messages_ja.properties"/>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Implementation-Title>PRD UI fork</Implementation-Title>
+              <Implementation-Version>${project.version}</Implementation-Version>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.7.0</version>
+        <executions>
+          <execution>
+            <id>copy-flatlaf</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.formdev</groupId>
+                  <artifactId>flatlaf</artifactId>
+                  <version>${flatlaf.version}</version>
+                  <outputDirectory>${project.build.directory}/patch-lib</outputDirectory>
+                  <destFileName>flatlaf.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

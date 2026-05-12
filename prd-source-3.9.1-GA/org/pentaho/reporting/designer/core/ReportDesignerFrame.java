@@ -22,8 +22,10 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.KeyboardFocusManager;
+import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragSource;
@@ -100,8 +102,8 @@ import org.pentaho.reporting.designer.core.inspections.InspectionSidePanePanel;
 import org.pentaho.reporting.designer.core.settings.SettingsListener;
 import org.pentaho.reporting.designer.core.settings.WorkspaceSettings;
 import org.pentaho.reporting.designer.core.status.StatusBar;
-import org.pentaho.reporting.designer.core.util.CanvasImageLoader;
 import org.pentaho.reporting.designer.core.util.IconLoader;
+import org.pentaho.reporting.designer.core.util.ModernSurfaceFill;
 import org.pentaho.reporting.designer.core.util.docking.Category;
 import org.pentaho.reporting.designer.core.util.docking.GlobalPane;
 import org.pentaho.reporting.designer.core.util.docking.InternalWindow;
@@ -937,8 +939,10 @@ public class ReportDesignerFrame extends JFrame
       super.paintComponent(g);
       if (getTabCount() == 0)
       {
-        final Image img = CanvasImageLoader.getInstance().getBackgroundImage().getImage();
-        g.drawImage(img, 0, 0, this);
+        final Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        ModernSurfaceFill.paintCanvasWorkspace(g2, getWidth(), getHeight());
+        g2.dispose();
       }
     }
   }

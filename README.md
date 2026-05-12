@@ -1,10 +1,6 @@
 # Pentaho Report Designer 3.9.1 — UI fork
 
-Форк интерфейса **Pentaho Report Designer (PRD) CE 3.9.1 GA**: современный внешний вид (FlatLaf), экран загрузки, фон рабочей области, приветственное окно, настройки темы. Исходная платформа и лицензия — у проекта Pentaho (LGPL).
-
-**Автор форка:** Dmitriy Shemyakin ([@DmitriyShemyakin](https://github.com/DmitriyShemyakin)).
-
-Репозиторий: [https://github.com/DmitriyShemyakin/pentaho-report-designer-3.9.1-fork](https://github.com/DmitriyShemyakin/pentaho-report-designer-3.9.1-fork)
+Форк интерфейса **Pentaho Report Designer (PRD) CE 3.9.1 GA**: экран загрузки, фон рабочей области, приветственное окно, настройки темы.
 
 ## Что внутри
 
@@ -16,7 +12,6 @@
 
 ## Требования
 
-- **Windows** (скрипты на PowerShell; запуск на других ОС — вручную собрать classpath по аналогии).
 - **JDK** 8+ (проверено с JDK 21), `JAVA_HOME` желательно задать явно.
 - **Apache Maven** 3.6+.
 - **curl.exe** (обычно есть в Windows 10/11) — для скачивания рантайма.
@@ -46,11 +41,3 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\run-prd.ps1
 ```
-
-## Что не попадает в Git
-
-См. `.gitignore`: тяжёлый рантайм (`runtime/prd-ce-3.9.1-GA/`, zip) и артефакты сборки (`target/`).
-
-## Лицензия
-
-Исходный продукт Pentaho Report Designer распространяется под **GNU LGPL** (см. заголовки файлов и текст на сплэше приложения). Этот репозиторий содержит модификации поверх того же правового режима; при публикации сохраняйте совместимость с LGPL и указывайте upstream.

@@ -41,3 +41,6 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\run-prd.ps1
 ```
+
+## Интерфейс
+<img width="1280" height="684" alt="image" src="https://github.com/user-attachments/assets/b94ae60e-00e5-40c0-bc7c-e896631e8ae6" />

@@ -10,7 +10,7 @@
 - `src/assembly/` — дескриптор сборки архива и скрипты `report-designer.bat` / `report-designer.ps1`.
 - `tools/setup-prd-runtime.ps1` — загрузка и распаковка официального `prd-ce-3.9.1-GA.zip` в `runtime/` (не коммитится).
 - `tools/run-prd.ps1` — тот же запуск, что и `PRD.bat`, но из PowerShell.
-- **`PRD.bat`** — в корне проекта: двойной щелчок = запуск дизайнера (после `setup-prd-runtime` и `mvn package`).
+- **`PRD.bat`** — в корне проекта: двойной щелчок = запуск (после `setup-prd-runtime` и `mvn package`). Сообщения в bat на английском, чтобы `cmd.exe` не ломал файл из‑за кодировки.
 - После `mvn package` — **портативный архив** `target/prd-ui-fork-3.9.1-fork-1-distribution.zip`: распаковать и запустить `report-designer.bat` или `report-designer.ps1` (рядом папки `lib/` и `patch/`). Один «fat» JAR из всех библиотек PRD не собираем — конфликты `META-INF` и подписей; ZIP — надёжный вариант для переноса.
 
 ## Требования
